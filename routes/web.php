@@ -30,5 +30,5 @@ Route::get('/filmes', [FilmesController::class,'index']);
 
 Route::get('/musicas', [MusicasController::class,'index']);
 
-Route::get('/red', [googleController::class,'index']);
+Route::get('/google', [googleController::class,'index']);
 
