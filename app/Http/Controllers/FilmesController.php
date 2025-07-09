@@ -8,17 +8,10 @@ class FilmesController extends Controller
 {
      public function index(Request $request){
 
-     return ['Aranha', 'ET', 'Vingadores'];
+    $filmes = ['Aranha', 'ET', 'Vingadores'];
 
 
-     $html = '<ul>';
-     foreach ($filmes as $filme) {
-        $html .= "<li>$filme</li>";
-     }
-     $html .= '</ul>';
-
-
-    return $html;
+     return view('filmes.index')->with('filmes',$filmes);
 
    }
 }

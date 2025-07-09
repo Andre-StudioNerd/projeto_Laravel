@@ -15,18 +15,11 @@ class MusicasController extends Controller
     public function index(Request $request)
     {
 
-    return $request->get(key:'id');
+    //return $request->get(key:'id');
 
     $musicas = ['Music', 'Music_Super', 'Music99'];
 
-    $html = '<ul>';
-    foreach ($musicas as $musica) {
-        $html .= "<li>$musica</li>";
-     }
-     $html .= '</ul>';
-
-
-    echo $html;
+    return view('musicas.index')->with('musicas',$musicas);
     }
 
     /**
