@@ -24,11 +24,19 @@ Route::get('/', function () {
 
 Route::get('/series', [SeriesController::class,'index']);
 Route::get('/series/criar', [SeriesController::class,'create']);
+Route::post('/series/salvar', [SeriesController::class,'store']);
+
+
 
 
 Route::get('/filmes', [FilmesController::class,'index']);
+Route::get('/filmes/criar', [FilmesController::class,'create']);
+Route::post('/filmes/salvar', [FilmesController::class,'store']);
+
 
 Route::get('/musicas', [MusicasController::class,'index']);
+Route::get('/musicas/criar', [MusicasController::class,'create']);
+Route::post('/musicas/salvar', [MusicasController::class,'store']);
 
 Route::get('/google', [googleController::class,'index']);
 

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Music;
+use App\Models\Musica;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MusicasController extends Controller
 {
@@ -15,9 +17,10 @@ class MusicasController extends Controller
     public function index(Request $request)
     {
 
-    //return $request->get(key:'id');
 
-    $musicas = ['Music', 'Music_Super', 'Music99'];
+
+
+       $musicas = Music::all();
 
     return view('musicas.index')->with('musicas',$musicas);
     }
@@ -29,7 +32,7 @@ class MusicasController extends Controller
      */
     public function create()
     {
-        //
+        return view('musicas.create');
     }
 
     /**
@@ -40,7 +43,15 @@ class MusicasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+      $nomeMusica=$request->input('nome');
+      $musica =new Music();
+      $musica->nome=$nomeMusica;
+       if($musica->Save()){
+       return redirect('/musicas');
+    }else{
+        return "Deu Erro";
+    }
     }
 
     /**
