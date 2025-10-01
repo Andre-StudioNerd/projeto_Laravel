@@ -98,4 +98,4 @@ Este projeto está licenciado sob a MIT License. Veja LICENSE.
 ## 📬 Contato
 Autor: André  
 GitHub: https://github.com/Andre-StudioNerd  
-E-mail: seu-email@exemplo.com
+
